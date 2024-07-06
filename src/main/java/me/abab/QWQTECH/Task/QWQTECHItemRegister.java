@@ -6,14 +6,27 @@ import io.github.thebusybiscuit.slimefun4.core.handlers.ItemUseHandler;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import me.abab.QWQTECH.utils.Items;
 import me.abab.QWQTECH.utils.QWQUtils;
+import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.inventory.ItemStack;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 
 public class QWQTECHItemRegister {
+    public static String colorize(String string) {
+        Pattern pattern = Pattern.compile("#[a-fA-F0-9]{6}");
+        for (Matcher matcher = pattern.matcher(string); matcher.find(); matcher = pattern.matcher(string)) {
+            String color = string.substring(matcher.start(), matcher.end());
+            string = string.replace(color, net.md_5.bungee.api.ChatColor.of(color) + ""); // You're missing this replacing
+        }
+        string = ChatColor.translateAlternateColorCodes('&', string); // Translates any & codes too
+        return string;
+    }
         public static void run() {
             ItemStack[] qwqDowel = new ItemStack[]{SlimefunItems.ENERGY_CONNECTOR, new ItemStack(Material.IRON_INGOT), SlimefunItems.ENERGY_CONNECTOR, new ItemStack(Material.IRON_INGOT), new ItemStack(Material.REDSTONE), new ItemStack(Material.IRON_INGOT), SlimefunItems.ENERGY_CONNECTOR, new ItemStack(Material.IRON_INGOT), SlimefunItems.ENERGY_CONNECTOR};
             QWQUtils.registerItem("QWQ_DOWEL", Items.QWQ_DOWEL, Items.QWQTECH_ITEM, RecipeType.ENHANCED_CRAFTING_TABLE, qwqDowel);
@@ -35,7 +48,7 @@ public class QWQTECHItemRegister {
                         World world = block.getWorld();
                         Location location = block.getLocation();
                         world.strikeLightningEffect(location);
-                        e.getPlayer().sendMessage("&x&5&5&f&f&f&f欸&x&5&a&f&a&f&f.&x&5&e&f&6&f&f.&x&6&3&f&1&f&f.&x&6&8&e&c&f&f怎&x&6&d&e&7&f&f么&x&7&1&e&3&f&f没&x&7&6&d&e&f&f伤&x&7&b&d&9&f&f害&x&8&0&d&4&f&f?&x&8&4&d&0&f&f.&x&8&9&c&b&f&f.&x&8&e&c&6&f&f.&x&9&2&c&2&f&f啊&x&9&7&b&d&f&f,&x&9&c&b&8&f&f是&x&a&1&b&3&f&f鼠&x&a&5&a&f&f&f鼠&x&a&a&a&a&f&f把&x&a&f&a&5&f&f伤&x&b&3&a&1&f&f害&x&b&8&9&c&f&f屯&x&b&d&9&7&f&f了&x&c&2&9&2&f&f啊&x&c&6&8&e&f&f,&x&c&b&8&9&f&f再&x&d&0&8&4&f&f也&x&d&4&8&0&f&f不&x&d&9&7&b&f&f给&x&d&e&7&6&f&f鼠&x&e&3&7&1&f&f鼠&x&e&7&6&d&f&f充&x&e&c&6&8&f&f钱&x&f&1&6&3&f&f了&x&f&6&5&e&f&fq&x&f&a&5&a&f&fw&x&f&f&5&5&f&fq");
+                        e.getPlayer().sendMessage(colorize("&x&f&f&5&5&f&f欸&x&f&9&5&b&f&f?&x&f&2&6&2&f&f.&x&e&c&6&8&f&f.&x&e&6&6&e&f&f.&x&e&0&7&4&f&f.&x&d&9&7&b&f&f.&x&d&3&8&1&f&f.&x&c&d&8&7&f&f伤&x&c&6&8&e&f&f害&x&c&0&9&4&f&f被&x&b&a&9&a&f&f鼠&x&b&3&a&1&f&f鼠&x&a&d&a&7&f&f吞&x&a&7&a&d&f&f了&x&a&1&b&3&f&f?&x&9&a&b&a&f&f再&x&9&4&c&0&f&f也&x&8&e&c&6&f&f不&x&8&7&c&d&f&f给&x&8&1&d&3&f&f鼠&x&7&b&d&9&f&f鼠&x&7&4&e&0&f&f充&x&6&e&e&6&f&f钱&x&6&8&e&c&f&f了&x&6&2&f&2&f&fq&x&5&b&f&9&f&fw&x&5&5&f&f&f&fq"));
                     }
                 }
             });

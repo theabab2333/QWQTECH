@@ -6,7 +6,7 @@
 
     <groupId>me.abab2333</groupId>
     <artifactId>QWQTECH</artifactId>
-    <version>240706_2</version>
+    <version>240706_3</version>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>

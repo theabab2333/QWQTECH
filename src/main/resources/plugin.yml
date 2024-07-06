@@ -3,6 +3,7 @@ author: abab2333
 description: qwq!!!
 main: me.abab.QWQTECH.QWQTECH
 version: ${project.version}
+website: https://github.com/theabab2333/QWQTECH
 api-version: 1.17
 depend:
 - Slimefun
