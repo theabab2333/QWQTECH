@@ -1,5 +1,6 @@
 package me.abab.QWQTECH.utils;
 
+import io.github.thebusybiscuit.slimefun4.api.items.ItemHandler;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
@@ -14,5 +15,14 @@ public class QWQUtils {
         SlimefunItem slimefunItem = new SlimefunItem(itemGroup, slimefunItemStack, recipeType, recipe);
         slimefunItem.register(QWQTECH.getInstance());
     }
+    public static void registerItem(String id, ItemStack item, ItemGroup itemGroup, RecipeType recipeType, ItemStack[] recipe, ItemHandler... itemHandlers) {
+        SlimefunItemStack slimefunItemStack = new SlimefunItemStack(id, item);
+        SlimefunItem slimefunItem = new SlimefunItem(itemGroup, slimefunItemStack, recipeType, recipe);
+        for(ItemHandler itemHandler : itemHandlers) {
+            slimefunItem.addItemHandler(itemHandlers);
+        };
+        slimefunItem.register(QWQTECH.getInstance());
+    }
+
 
 }

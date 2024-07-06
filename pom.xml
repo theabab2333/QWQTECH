@@ -4,9 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>me.abab</groupId>
-    <artifactId>QWQTECH_MAVEN</artifactId>
-    <version>2407_1</version>
+    <groupId>me.abab2333</groupId>
+    <artifactId>QWQTECH</artifactId>
+    <version>240706_2</version>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
