@@ -53,6 +53,14 @@ public class QWQTECHItemRegister {
                 }
             });
 
+            ItemStack[] HuZT0pre_qwq = new ItemStack[]{null, null, null, null, null, null, null, null, null};
+            QWQUtils.registerItem("QWQ_HUZTOPRE_QWQ", Items.QWQ_HUZTOPRE_QWQ, Items.QWQTECH_SNAKE, RecipeType.NULL, HuZT0pre_qwq);
+            ItemStack[] DeviIGugY = new ItemStack[]{null, null, null, null, null, null, null, null, null};
+            QWQUtils.registerItem("QWQ_DEV_DASHE", Items.QWQ_DEV_DASHE, Items.QWQTECH_SNAKE, RecipeType.NULL, DeviIGugY);
+            ItemStack[] KaleineXD = new ItemStack[]{null, null, null, null, null, null, null, null, null};
+            QWQUtils.registerItem("QWQ_KALEINEXD_DASHE", Items.QWQ_KALEINEXD_DASHE, Items.QWQTECH_SNAKE, RecipeType.NULL, KaleineXD);
+
+
 
         }
     }

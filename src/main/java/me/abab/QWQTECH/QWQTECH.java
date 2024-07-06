@@ -22,7 +22,7 @@ public class QWQTECH extends JavaPlugin implements SlimefunAddon {
     public void onEnable() {
         instance = this;
         getLogger().info("#==================#");
-        getLogger().info("#   伟大的QWQTECH   #");
+        getLogger().info("#   伟大的QWQTECH  #");
         getLogger().info("#==================#");
         QWQTECHItemRegister.run();
     }
