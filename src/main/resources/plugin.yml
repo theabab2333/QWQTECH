@@ -1,0 +1,8 @@
+name: QWQTECH
+author: abab2333
+description: qwq!!!
+main: me.abab.QWQTECH.QWQTECH
+version: ${project.version}
+api-version: 1.17
+depend:
+- Slimefun
